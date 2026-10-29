@@ -1,0 +1,13 @@
+name: Unit Tests
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  real:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Real required CI (fails on this PR)
+        run: |
+          echo "real Unit Tests ran for ${{ github.event.pull_request.head.sha }}"
+          exit 1
